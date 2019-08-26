@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.FootyDetailsInfo" />
+        <activity android:name=".view.SortingActivity" />
+        <activity android:name=".view.FootyDetailsInfoActivity" />
     </application>
 
 </manifest>

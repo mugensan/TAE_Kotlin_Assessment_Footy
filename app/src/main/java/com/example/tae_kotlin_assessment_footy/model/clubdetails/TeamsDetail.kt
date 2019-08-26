@@ -1,8 +1,8 @@
-package com.example.tae_kotlin_assessment_footy.model.ligues
+package com.example.tae_kotlin_assessment_footy.model.clubdetails
 
 import com.google.gson.annotations.SerializedName
 
-data class Teams (
+data class TeamsDetail (
 
 	@SerializedName("idTeam") val idTeam : Int,
 	@SerializedName("idSoccerXML") val idSoccerXML : Int,

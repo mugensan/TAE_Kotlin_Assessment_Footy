@@ -1,14 +1,17 @@
 package com.example.tae_kotlin_assessment_footy.network
 
+import com.example.tae_kotlin_assessment_footy.model.clubdetails.DetailedClubRecord
+import com.example.tae_kotlin_assessment_footy.model.clublist.ClubsModel
+import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface FootyRequest {
 
-    @GET()
+    @GET("search_all_teams.php")
+    fun getLeague(@Query("l")league:String ): Call<DetailedClubRecord>
 
-
-    @GET("{idTeam}")
-    fun getId(@Path("idTeam")club_id : Int)
+//    https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=
+//    @GET("{idTeam}")
+//    fun getLeague(@Path("idTeam")club_id : Int)
 }
