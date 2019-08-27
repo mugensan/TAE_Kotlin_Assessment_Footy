@@ -1,15 +1,14 @@
-package com.example.tae_kotlin_assessment_footy.presenter
+package com.example.tae_kotlin_assessment_footy.presenter.list
 
 import android.util.Log
 import com.example.tae_kotlin_assessment_footy.common.Constants
 import com.example.tae_kotlin_assessment_footy.common.enqueue
-import com.example.tae_kotlin_assessment_footy.model.clubdetails.DetailedClubRecord
 import com.example.tae_kotlin_assessment_footy.model.clublist.ClubsModel
 import com.example.tae_kotlin_assessment_footy.network.clubsnetwork.FootyRequest
 import com.example.tae_kotlin_assessment_footy.network.clubsnetwork.FootyRetrofitInstance
-import com.example.tae_kotlin_assessment_footy.network.detailsnetwork.ClubInterface
+import com.example.tae_kotlin_assessment_footy.presenter.details.BasePresenter
 
-class FootyPresenter: BasePresenter<FootyView> (){
+class FootyPresenter: BasePresenter<FootyView>(){
     override fun onViewAttached(view: FootyView) {
         super.onViewAttached(view)
 
@@ -17,7 +16,7 @@ class FootyPresenter: BasePresenter<FootyView> (){
 
         val footyRequest = FootyRetrofitInstance()
             .retrofitInstance.create(FootyRequest::class.java)
-        val call = footyRequest.getClub(Constants.URL_LEAGUE)
+        val call = footyRequest.getClubs(Constants.URL_LEAGUE)
 
         call.enqueue{
             onResponse ={
@@ -25,11 +24,13 @@ class FootyPresenter: BasePresenter<FootyView> (){
                 Log.d("SHOWREC", clubRecordResult!!.teams[0].strTeam)
                 view.showClubRec(clubRecordResult)
             }
+            onFailure = {
+                Log.d("FAILURE", it?.message)}
         }
     }
 }
 
-interface FootyView:BasePresenter.View{
+interface FootyView: BasePresenter.View{
     fun showLoading()
     fun showClubRec(clubsModel:ClubsModel)
 }

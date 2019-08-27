@@ -18,9 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.FootyDetailsInfo" />
+        <activity android:name=".view.list.FootyList" />
         <activity android:name=".view.SortingActivity" />
-        <activity android:name=".view.FootyDetailsInfoActivity" />
+        <activity android:name=".view.details.FootyDetailsInfoActivity" />
+        <activity android:name=".presenter.details.DetailsPresenter" />
     </application>
 
 </manifest>

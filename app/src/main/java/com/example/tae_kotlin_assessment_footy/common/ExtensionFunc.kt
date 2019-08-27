@@ -65,7 +65,7 @@ class CallBackKt<T> : Callback<T> {
 fun showToast(
     context: Context,
     text: String,
-    duration: Int = Toast.LENGTH_SHORT
+    duration: Int = Toast.LENGTH_LONG
     /*functor: Toast.() -> Unit*/
 ) {
     val toast: Toast = Toast.makeText(context, text, duration)
@@ -73,22 +73,22 @@ fun showToast(
     toast.show()
 }
 
-fun ArrayList<Int>.sort(): ArrayList<Int> {
-    var intervert = true
-    while (intervert) {
-        intervert = false
-        for (i in 0 until this.indices.last) {
-            if (this[i] > this[i + 1]) {
-                val temp = this[i]
-                this[i] = this[i + 1]
-                this[i + 1] = temp
-
-                intervert = true
-            }
-        }
-    }
-    return this
-}
+//fun ArrayList<String>.sort(): ArrayList<Int> {
+//    var intervert = true
+//    while (intervert) {
+//        intervert = false
+//        for (i in 0 until this.indices.last) {
+//            if (this[i] > this[i + 1]) {
+//                val temp = this[i]
+//                this[i] = this[i + 1]
+//                this[i + 1] = temp
+//
+//                intervert = true
+//            }
+//        }
+//    }
+//    return this
+//}
 
 
 

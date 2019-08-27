@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_assessment_footy.view
+package com.example.tae_kotlin_assessment_footy.view.list
 
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +8,10 @@ import com.example.tae_kotlin_assessment_footy.common.inflate
 import com.example.tae_kotlin_assessment_footy.common.loadImg
 import com.example.tae_kotlin_assessment_footy.model.clublist.ClubsModel
 import com.example.tae_kotlin_assessment_footy.model.clublist.Teams
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.detail_club_layout.view.*
 import kotlinx.android.synthetic.main.footy_card_view.view.*
+import kotlinx.android.synthetic.main.footy_card_view.view.tv_club_name
 
 
 class FootyAdapter(private val clubsModel: ClubsModel, private val listener: onClubClick) :
@@ -30,7 +33,9 @@ class FootyAdapter(private val clubsModel: ClubsModel, private val listener: onC
 
         holder.tv_club_name.text = clubsModel.teams[position].strTeam
         holder.overview.text = clubsModel.teams[position].strDescriptionEN
-        holder.logo.loadImg(clubsModel.teams[position].strTeamBadge)
+        holder.logoClub.loadImg(clubsModel.teams[position].strTeamBadge)
+
+        holder.bind(clubsModel.teams[position],listener)
     }
 
 
@@ -47,7 +52,7 @@ class FootyCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     val tv_club_name = view.tv_club_name
     val overview = view.tv_overview
-    val logo = view.iv_imageView
+    val logoClub = view.iv_imageView
 }
 
 

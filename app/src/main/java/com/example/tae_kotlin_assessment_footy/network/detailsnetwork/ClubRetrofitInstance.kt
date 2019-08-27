@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_assessment_footy.network
+package com.example.tae_kotlin_assessment_footy.network.detailsnetwork
 
 import com.example.tae_kotlin_assessment_footy.common.Constants
 import okhttp3.OkHttpClient

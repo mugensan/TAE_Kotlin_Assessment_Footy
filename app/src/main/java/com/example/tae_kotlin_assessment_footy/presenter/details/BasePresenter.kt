@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_assessment_footy.presenter
+package com.example.tae_kotlin_assessment_footy.presenter.details
 
 import androidx.annotation.CallSuper
 

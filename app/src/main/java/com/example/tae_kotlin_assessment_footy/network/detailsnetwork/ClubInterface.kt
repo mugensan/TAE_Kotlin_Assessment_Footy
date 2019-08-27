@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_assessment_footy.network
+package com.example.tae_kotlin_assessment_footy.network.detailsnetwork
 
 import android.content.Intent
 import com.example.tae_kotlin_assessment_footy.common.Constants
@@ -12,8 +12,8 @@ interface ClubInterface {
     @GET("lookupteam.php")
     fun getClubDetails(@Query("id")club_id : Int): Call<DetailedClubRecord>
 
-    fun getClubId():Int{
-        var intent: Intent? = null
-        return intent!!.getIntExtra(Constants.MY_MESS,3)
+//    fun getClubId():Int{
+//        var intent: Intent? = null
+//        return intent!!.getIntExtra(Constants.MY_MESS,3)
     }
-}
+//}
