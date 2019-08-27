@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface FootyRequest {
 
     @GET("search_all_teams.php")
-    fun getLeague(@Query("l")league:String ): Call<DetailedClubRecord>
+    fun getClub(@Query("l")league:String):Call<ClubsModel>
 
 //    https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=
 //    @GET("{idTeam}")

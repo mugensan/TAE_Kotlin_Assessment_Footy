@@ -7,8 +7,8 @@ import com.example.tae_kotlin_assessment_footy.R
 import com.example.tae_kotlin_assessment_footy.common.Constants
 import com.example.tae_kotlin_assessment_footy.common.enqueue
 import com.example.tae_kotlin_assessment_footy.common.loadImg
-import com.example.tae_kotlin_assessment_footy.network.ClubInterface
-import com.example.tae_kotlin_assessment_footy.network.ClubRetrofitInstance
+import com.example.tae_kotlin_assessment_footy.network.detailsnetwork.ClubInterface
+import com.example.tae_kotlin_assessment_footy.network.detailsnetwork.ClubRetrofitInstance
 import kotlinx.android.synthetic.main.detail_club_layout.*
 
 class FootyDetailsInfoActivity : AppCompatActivity(){
@@ -17,7 +17,8 @@ class FootyDetailsInfoActivity : AppCompatActivity(){
         setContentView(R.layout.detail_club_layout)
 
         val clubId = intent.getIntExtra(Constants.MY_MESS,3)
-        val clubInterface  = ClubRetrofitInstance().retrofitInstance.create(ClubInterface::class.java)
+        val clubInterface  = ClubRetrofitInstance()
+            .retrofitInstance.create(ClubInterface::class.java)
 
         val call = clubInterface.getClubDetails(clubId)
         call.enqueue{

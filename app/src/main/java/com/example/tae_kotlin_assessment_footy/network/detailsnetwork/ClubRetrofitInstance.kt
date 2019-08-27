@@ -16,7 +16,7 @@ class ClubRetrofitInstance {
             loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
             return  Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL_ID)
+                .baseUrl(Constants.BASE_URL_DETAILS)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build()

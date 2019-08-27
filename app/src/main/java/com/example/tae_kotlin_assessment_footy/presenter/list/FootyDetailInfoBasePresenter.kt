@@ -2,6 +2,7 @@ package com.example.tae_kotlin_assessment_footy.presenter
 
 
 import androidx.annotation.CallSuper
+import com.example.tae_kotlin_assessment_footy.view.list.FootyList
 
 
 abstract class FootyDetailInfoBasePresenter<T : FootyDetailInfoBasePresenter.View> {
